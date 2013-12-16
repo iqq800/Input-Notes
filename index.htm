@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Input Notes Plugin Examples</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="inputnotes.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#example1").inputNotes( 
+    {
+      sexwarning: {
+        pattern: /(^|\s)sex(\s|$)/ig,
+        type: 'warning',
+        text: 'Do not type "sex"!' 
+      },
+      numbersnote: {
+        pattern: /[0-9]/,
+        type: 'danger',
+        text: 'Do not type numbers!' 
+      }
+    }
+  );
+  $("#example2").inputNotes( 
+  {
+    email: {
+      pattern: /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+$/,
+      type: 'info',
+      text: 'Yes, that\'s a valid email address!' 
+    }
+  }
+);
+$("#example3").inputNotes( 
+  {
+    minlength: {
+      pattern: /^(.){0,5}$/i,
+      type: 'info',
+      text: 'Minimum password length is 6 characters.' 
+    },
+    characters: {
+      pattern: /[^a-z0-9]/i,
+      type: 'warning',
+      text: 'Please only alphanumeric characters.' 
+    },
+    alphaandnum: {
+      pattern: /(^[a-z]+$)|(^[0-9]+$)/i,
+      type: 'warning',
+      text: 'Please use both, letters and numbers.' 
+    },
+    bigandsmall: {
+      pattern: /(^[a-z0-9]{2,}$)|(^[A-Z0-9]{2,}$)/,
+      type: 'warning',
+      text: 'Please use both, small and capitalized letters.' 
+    }
+  }
+);
+$("#example4").inputNotes( 
+  {
+    requiredfield: {
+      pattern: /(^(\s)+$)|(^$)/,
+      type: 'danger',
+      text: 'This field is required!' 
+    }
+  }
+);
+$("#example5").inputNotes( 
+  {
+    tags: {
+      pattern: /<(\S+).*>(.*)<\/\1>/,
+      type: 'warning',
+      text: 'Do not use any HTML, it will be filtered out!' 
+    }
+  }
+);
+});
+</script>
+<style>
+#wrapper {
+width: 960px;
+margin: 150px auto;
+}
+form {
+width: 400px;
+height: auto;
+margin: 15px 0;
+}
+</style>
+</head>
+
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/form/jQuery-Text-Field-Notes-with-Regular-Expressions-Input-Notes.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<div id="wrapper">
+<h1>jQuery Input Notes Plugin</h1>
+<form id="basic" class="demo">
+<h2>Basic Demo</h2>
+<textarea name="message" id="example1" cols=60 rows=4 class="form-control" />
+</textarea>
+</form>
+<form id="email-checker" class="demo">
+<h2>Email checker</h2>
+<input type="email" id="example2" class="form-control" />
+</textarea>
+</form>
+<form id="password-indicator" class="demo">
+<h2>Password Strength Indicator</h2>
+<input type="password" id="example3" class="form-control" />
+</textarea>
+</form>
+<form id="required-field" class="demo">
+<h2>Required Field:</h2>
+<input type="text" id="example4" class="form-control" />
+</textarea>
+</form>
+<form id="html-tags" class="demo">
+<h2>Html tags:</h2>
+<input type="text" id="example5" class="form-control" />
+</textarea>
+</form>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
